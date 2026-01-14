@@ -52,7 +52,7 @@ public class PetManager {
     public boolean updatePet(Pet pet, int indice) {
 
         for (int i = 0; i < pets.length; i++) {
-            if (pets[i].equals(pets[indice]) && pets[i] != null) {
+            if (indice >= 0 && indice < pets.length && pets[i] != null) {
                 pets[i] = pet;
                 return true;
 
