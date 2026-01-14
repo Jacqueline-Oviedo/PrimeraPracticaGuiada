@@ -1,7 +1,7 @@
 public class Person {
     private String name;
     private int age;
-    private Pet[] pets;
+    // private Pet[] pets;
     private PetManager petManager;
 
     public Person(String name, int age, PetManager petManager) {
@@ -9,7 +9,7 @@ public class Person {
         this.age = age;
         this.petManager = petManager;
 
-    } 
+    }
 
     public String getName() {
         return name;
@@ -29,15 +29,21 @@ public class Person {
     }
 
     public Pet[] getPets() {
-        return pets;
-    }
-
-    public void setPets(Pet[] pets) {
-        this.pets = pets;
+        return petManager.getPets();
     }
 
     public boolean addPet(Pet pet) {
         return petManager.addPet(pet);
+
+    }
+
+    public boolean removePet(Pet pet) {
+        return petManager.removePet(pet);
+
+    }
+
+    public boolean updatePet(Pet pet, int indice) {
+        return petManager.updatePet(pet, indice);
 
     }
 
